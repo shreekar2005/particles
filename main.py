@@ -40,18 +40,23 @@ green = (0, 255, 0)
 blue = (0, 0, 128)
 
 font = pygame.font.Font('freesansbold.ttf', 50)
+font2 = pygame.font.Font('freesansbold.ttf', 30)
 text1 = font.render('Gravity OFF(G)', True, white)
 text2 = font.render('Gravity ON(H)', True, white)
 text3 = font.render('Slow motion OFF(leftclick)', True, white)
 text4 = font.render('Slow motion ON(release)', True, white)
 text5 = font.render('grnd Gravity OFF(j)', True, white)
 text6 = font.render('grnd Gravity ON(k)', True, white)
+text7 =  font2.render(''''rightclick' to create light particle, 'f' for create heavy particle, 'e' for creating normal particle, 'q' to quit''', True, white)
+
 textRect = text1.get_rect()
 textRect.center = (width/2+60,height/2)
 textRect2 = text3.get_rect() 
 textRect2.center = (width/2,height/2+50)
 textRect3 = text1.get_rect()
-textRect3.center = (width/2-60,height/2+100) 
+textRect3.center = (width/2,height/2+100) 
+textRect4= text7.get_rect()
+textRect4.center = (width/2,height/2+150) 
 slowmotion=False
 maxmass=1 
 
@@ -184,6 +189,8 @@ while running:
         screen.blit(text4, textRect2)
     else:
         screen.blit(text3, textRect2)
+        
+    screen.blit(text7, textRect4)
     
     if pygame.mouse.get_pressed()[0]==True: #for interaction with balls
         mousepos=pygame.mouse.get_pos()
