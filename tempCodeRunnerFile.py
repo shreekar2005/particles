@@ -1,0 +1,1 @@
+collision(id,id2,dist)
